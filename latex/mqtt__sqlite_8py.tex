@@ -1,0 +1,37 @@
+\doxysection{mqtt\+\_\+sqlite.\+py File Reference}
+\hypertarget{mqtt__sqlite_8py}{}\label{mqtt__sqlite_8py}\index{mqtt\_sqlite.py@{mqtt\_sqlite.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespacemqtt__sqlite}{mqtt\+\_\+sqlite}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_a3306304dd37f57bb59896e06fa4ad9a0}{mqtt\+\_\+sqlite.\+guardar\+\_\+exterior}} (data)
+\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_af4d21c217179115f6229e8b25ddbbfd2}{mqtt\+\_\+sqlite.\+guardar\+\_\+interior}} (data)
+\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_a9a31b5ce67df0a54fa8d80ae2df93339}{mqtt\+\_\+sqlite.\+on\+\_\+connect}} (client, userdata, flags, rc, properties=None)
+\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_a79df49600dc876d1aba7dea1bb0ce0e9}{mqtt\+\_\+sqlite.\+on\+\_\+message}} (client, userdata, msg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \doxymbox{\hyperlink{namespacemqtt__sqlite_a1ae42b68439b0ca8ef193090aa33f1b8}{mqtt\+\_\+sqlite.\+BROKER}} = "{}localhost"{}
+\begin{DoxyCompactList}\small\item\em Dirección del broker MQTT. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{namespacemqtt__sqlite_abcd110ed2c1540ee1d209c7177831714}{mqtt\+\_\+sqlite.\+PORT}} = 1883
+\begin{DoxyCompactList}\small\item\em Puerto MQTT estándar. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespacemqtt__sqlite_a58823b971897c9ab79405d747ad36dbd}{mqtt\+\_\+sqlite.\+TOPIC\+\_\+\+EXTERIOR}} = "{}fermentador/\+esp\+Exterior/\+datos"{}
+\begin{DoxyCompactList}\small\item\em Tópico MQTT utilizado por el ESP32 exterior. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespacemqtt__sqlite_a03ebf7fb684f011781d23504360b9416}{mqtt\+\_\+sqlite.\+TOPIC\+\_\+\+INTERIOR}} = "{}fermentador/\+esp\+Interior/\+datos"{}
+\begin{DoxyCompactList}\small\item\em Tópico MQTT utilizado por el ESP32 interior. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespacemqtt__sqlite_ad90fe81ef1f589172eaeead41f29adcf}{mqtt\+\_\+sqlite.\+DB\+\_\+\+NAME}} = "{}fermentacion.\+db"{}
+\begin{DoxyCompactList}\small\item\em Nombre de la base de datos SQLite. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_a9b020f579ec2918b973a777251795eb8}{mqtt\+\_\+sqlite.\+cliente}} = mqtt.\+Client()
+\begin{DoxyCompactList}\small\item\em Cliente MQTT principal. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_a6652201257b1f4d4e06e09330d6275d1}{mqtt\+\_\+sqlite.\+on\+\_\+connect}}
+\begin{DoxyCompactList}\small\item\em Callback de conexión. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespacemqtt__sqlite_a3159b5d4db28948a589c16bc0ce5a7e1}{mqtt\+\_\+sqlite.\+on\+\_\+message}}
+\begin{DoxyCompactList}\small\item\em Callback de recepción de mensajes. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\begin{theindex}
+
+  \item {app}, \hyperpage{9}
+    \subitem {app}, \hyperpage{10}
+    \subitem {DB\_NAME}, \hyperpage{10}
+    \subitem {debug}, \hyperpage{10}
+    \subitem {host}, \hyperpage{10}
+    \subitem {index}, \hyperpage{10}
+    \subitem {port}, \hyperpage{10}
+
+  \indexspace
+
+  \item {BROKER}
+    \subitem {mqtt\_sqlite}, \hyperpage{13}
+
+  \indexspace
+
+  \item {cliente}
+    \subitem {mqtt\_sqlite}, \hyperpage{13}
+  \item {codigo}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+
+  \indexspace
+
+  \item {DB\_NAME}
+    \subitem {app}, \hyperpage{10}
+    \subitem {mqtt\_sqlite}, \hyperpage{13}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+  \item {debug}
+    \subitem {app}, \hyperpage{10}
+
+  \indexspace
+
+  \item {enviar\_thingspeak}
+    \subitem {thingspeak\_uploader}, \hyperpage{15}
+  \item {exterior}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+  \item {exterior\_nuevo}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+
+  \indexspace
+
+  \item {guardar\_exterior}
+    \subitem {mqtt\_sqlite}, \hyperpage{12}
+  \item {guardar\_interior}
+    \subitem {mqtt\_sqlite}, \hyperpage{12}
+
+  \indexspace
+
+  \item {host}
+    \subitem {app}, \hyperpage{10}
+
+  \indexspace
+
+  \item {id\_exterior}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+  \item {id\_interior}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+  \item {index}
+    \subitem {app}, \hyperpage{10}
+  \item {interior}
+    \subitem {thingspeak\_uploader}, \hyperpage{16}
+  \item {interior\_nuevo}
+    \subitem {thingspeak\_uploader}, \hyperpage{17}
+
+  \indexspace
+
+  \item {mqtt\_sqlite}, \hyperpage{11}
+    \subitem {BROKER}, \hyperpage{13}
+    \subitem {cliente}, \hyperpage{13}
+    \subitem {DB\_NAME}, \hyperpage{13}
+    \subitem {guardar\_exterior}, \hyperpage{12}
+    \subitem {guardar\_interior}, \hyperpage{12}
+    \subitem {on\_connect}, \hyperpage{12, 13}
+    \subitem {on\_message}, \hyperpage{13, 14}
+    \subitem {PORT}, \hyperpage{14}
+    \subitem {TOPIC\_EXTERIOR}, \hyperpage{14}
+    \subitem {TOPIC\_INTERIOR}, \hyperpage{14}
+  \item {mqtt\_sqlite.py}, \hyperpage{19}
+
+  \indexspace
+
+  \item {obtener\_ultimos\_datos}
+    \subitem {thingspeak\_uploader}, \hyperpage{15}
+  \item {on\_connect}
+    \subitem {mqtt\_sqlite}, \hyperpage{12, 13}
+  \item {on\_message}
+    \subitem {mqtt\_sqlite}, \hyperpage{13, 14}
+
+  \indexspace
+
+  \item {PORT}
+    \subitem {mqtt\_sqlite}, \hyperpage{14}
+  \item {port}
+    \subitem {app}, \hyperpage{10}
+
+  \indexspace
+
+  \item {THINGSPEAK\_API\_KEY}
+    \subitem {thingspeak\_uploader}, \hyperpage{17}
+  \item {thingspeak\_uploader}, \hyperpage{14}
+    \subitem {codigo}, \hyperpage{16}
+    \subitem {DB\_NAME}, \hyperpage{16}
+    \subitem {enviar\_thingspeak}, \hyperpage{15}
+    \subitem {exterior}, \hyperpage{16}
+    \subitem {exterior\_nuevo}, \hyperpage{16}
+    \subitem {id\_exterior}, \hyperpage{16}
+    \subitem {id\_interior}, \hyperpage{16}
+    \subitem {interior}, \hyperpage{16}
+    \subitem {interior\_nuevo}, \hyperpage{17}
+    \subitem {obtener\_ultimos\_datos}, \hyperpage{15}
+    \subitem {THINGSPEAK\_API\_KEY}, \hyperpage{17}
+    \subitem {THINGSPEAK\_URL}, \hyperpage{17}
+    \subitem {ultimo\_id\_exterior}, \hyperpage{17}
+    \subitem {ultimo\_id\_interior}, \hyperpage{17}
+  \item {thingspeak\_uploader.py}, \hyperpage{20}
+  \item {THINGSPEAK\_URL}
+    \subitem {thingspeak\_uploader}, \hyperpage{17}
+  \item {TOPIC\_EXTERIOR}
+    \subitem {mqtt\_sqlite}, \hyperpage{14}
+  \item {TOPIC\_INTERIOR}
+    \subitem {mqtt\_sqlite}, \hyperpage{14}
+
+  \indexspace
+
+  \item {ultimo\_id\_exterior}
+    \subitem {thingspeak\_uploader}, \hyperpage{17}
+  \item {ultimo\_id\_interior}
+    \subitem {thingspeak\_uploader}, \hyperpage{17}
+
+  \indexspace
+
+  \item {webP Directory Reference}, \hyperpage{7}
+  \item {webP/app.py}, \hyperpage{20}
+  \item {webP/static Directory Reference}, \hyperpage{7}
+  \item {webP/static/style.css}, \hyperpage{20}
+  \item {webP/templates Directory Reference}, \hyperpage{7}
+  \item {webP/templates/index.html}, \hyperpage{20}
+
+\end{theindex}

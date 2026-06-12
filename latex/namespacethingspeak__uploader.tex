@@ -1,0 +1,202 @@
+\doxysection{thingspeak\+\_\+uploader Namespace Reference}
+\hypertarget{namespacethingspeak__uploader}{}\label{namespacethingspeak__uploader}\index{thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_ac14cb5da69915624163751c918561523}{obtener\+\_\+ultimos\+\_\+datos}} ()
+\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_ac5f4af49461ee2e34f3f742bd93daa34}{enviar\+\_\+thingspeak}} (interior, exterior)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \doxymbox{\hyperlink{namespacethingspeak__uploader_a953b0e605a27ed70b2ebce73a39dc9af}{DB\+\_\+\+NAME}} = "{}fermentacion.\+db"{}
+\begin{DoxyCompactList}\small\item\em Nombre de la base de datos SQLite. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespacethingspeak__uploader_ae1c8eba74bd31c535b1e3eef9c98086c}{THINGSPEAK\+\_\+\+API\+\_\+\+KEY}} = "{}..."{}
+\begin{DoxyCompactList}\small\item\em Clave de escritura del canal Thing\+Speak. \end{DoxyCompactList}\item 
+str \doxymbox{\hyperlink{namespacethingspeak__uploader_a3112d4747cf79e5e4a791e72c91c8486}{THINGSPEAK\+\_\+\+URL}} = "{}https:\+/\+/\+api.\+thingspeak.\+com/\+update"{}
+\begin{DoxyCompactList}\small\item\em URL del servicio de actualización Thing\+Speak. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{namespacethingspeak__uploader_a73c511b373c37ce65ed38523b0047625}{ultimo\+\_\+id\+\_\+interior}} = 0
+\begin{DoxyCompactList}\small\item\em Último ID enviado desde la tabla interior. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{namespacethingspeak__uploader_a3ef4c0376c8ecd160e19231452b73b2e}{ultimo\+\_\+id\+\_\+exterior}} = 0
+\begin{DoxyCompactList}\small\item\em Último ID enviado desde la tabla exterior. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_a3abd0ad1b363ee328b1114f89ba1935f}{interior}}
+\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_aff891abfddef8c3f17a2613ef3b28f83}{exterior}}
+\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_ab6cb9175643693d9a8c27d4a68fed851}{id\+\_\+interior}} = \doxymbox{\hyperlink{namespacethingspeak__uploader_a3abd0ad1b363ee328b1114f89ba1935f}{interior}}\+[0]\+
+\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_ade8f1705fe567c593619cf49a60796f1}{id\+\_\+exterior}} = \doxymbox{\hyperlink{namespacethingspeak__uploader_aff891abfddef8c3f17a2613ef3b28f83}{exterior}}\+[0]\+
+\item 
+int \doxymbox{\hyperlink{namespacethingspeak__uploader_a60f2f973c5877faa36f664968fa4e3e5}{interior\+\_\+nuevo}} = \doxymbox{\hyperlink{namespacethingspeak__uploader_ab6cb9175643693d9a8c27d4a68fed851}{id\+\_\+interior}} $>$ \doxymbox{\hyperlink{namespacethingspeak__uploader_a73c511b373c37ce65ed38523b0047625}{ultimo\+\_\+id\+\_\+interior}}
+\item 
+int \doxymbox{\hyperlink{namespacethingspeak__uploader_ac9c54341ed8c4ebd214a7878e3d91a60}{exterior\+\_\+nuevo}} = \doxymbox{\hyperlink{namespacethingspeak__uploader_ade8f1705fe567c593619cf49a60796f1}{id\+\_\+exterior}} $>$ \doxymbox{\hyperlink{namespacethingspeak__uploader_a3ef4c0376c8ecd160e19231452b73b2e}{ultimo\+\_\+id\+\_\+exterior}}
+\item 
+\doxymbox{\hyperlink{namespacethingspeak__uploader_a471673d980bbb71081adc16f99cc80cb}{codigo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@file thingspeak_uploader.py
+@brief Servicio de sincronización entre SQLite y ThingSpeak.
+
+Este módulo obtiene periódicamente los registros más recientes
+almacenados en la base de datos SQLite y los publica en la
+plataforma ThingSpeak para monitoreo remoto.
+
+Variables enviadas:
+
+- Temperatura interna
+- pH
+- Concentración de CO2
+- Temperatura exterior
+- Humedad exterior
+
+Flujo de operación:
+
+SQLite -> thingspeak_uploader.py -> ThingSpeak Cloud
+
+@author
+Fernando Plazas Trujillo
+
+@date 2026
+\end{DoxyVerb}
+ 
+
+\label{namespacethingspeak__uploader_doc-func-members}
+\Hypertarget{namespacethingspeak__uploader_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacethingspeak__uploader_ac5f4af49461ee2e34f3f742bd93daa34}\index{thingspeak\_uploader@{thingspeak\_uploader}!enviar\_thingspeak@{enviar\_thingspeak}}
+\index{enviar\_thingspeak@{enviar\_thingspeak}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{enviar\_thingspeak()}{enviar\_thingspeak()}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_ac5f4af49461ee2e34f3f742bd93daa34} 
+enviar\+\_\+thingspeak (\begin{DoxyParamCaption}\item[{}]{interior}{, }\item[{}]{exterior}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Envía datos a la plataforma ThingSpeak.
+
+Construye el payload HTTP y realiza una solicitud POST
+al canal configurado de ThingSpeak.
+
+@param interior Registro más reciente de la tabla interior.
+@param exterior Registro más reciente de la tabla exterior.
+
+@return Código HTTP devuelto por el servidor.
+\end{DoxyVerb}
+ \Hypertarget{namespacethingspeak__uploader_ac14cb5da69915624163751c918561523}\index{thingspeak\_uploader@{thingspeak\_uploader}!obtener\_ultimos\_datos@{obtener\_ultimos\_datos}}
+\index{obtener\_ultimos\_datos@{obtener\_ultimos\_datos}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{obtener\_ultimos\_datos()}{obtener\_ultimos\_datos()}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_ac14cb5da69915624163751c918561523} 
+obtener\+\_\+ultimos\+\_\+datos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Obtiene los registros más recientes de la base de datos.
+
+Consulta las tablas interior y exterior y recupera
+el último registro almacenado en cada una.
+
+@return Tupla (interior, exterior) con los registros obtenidos.
+\end{DoxyVerb}
+ 
+
+\label{namespacethingspeak__uploader_doc-var-members}
+\Hypertarget{namespacethingspeak__uploader_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacethingspeak__uploader_a471673d980bbb71081adc16f99cc80cb}\index{thingspeak\_uploader@{thingspeak\_uploader}!codigo@{codigo}}
+\index{codigo@{codigo}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{codigo}{codigo}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a471673d980bbb71081adc16f99cc80cb} 
+thingspeak\+\_\+uploader.\+codigo}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \ enviar\_thingspeak(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ interior,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exterior}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+\Hypertarget{namespacethingspeak__uploader_a953b0e605a27ed70b2ebce73a39dc9af}\index{thingspeak\_uploader@{thingspeak\_uploader}!DB\_NAME@{DB\_NAME}}
+\index{DB\_NAME@{DB\_NAME}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{DB\_NAME}{DB\_NAME}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a953b0e605a27ed70b2ebce73a39dc9af} 
+str thingspeak\+\_\+uploader.\+DB\+\_\+\+NAME = "{}fermentacion.\+db"{}}
+
+
+
+Nombre de la base de datos SQLite. 
+
+\Hypertarget{namespacethingspeak__uploader_aff891abfddef8c3f17a2613ef3b28f83}\index{thingspeak\_uploader@{thingspeak\_uploader}!exterior@{exterior}}
+\index{exterior@{exterior}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{exterior}{exterior}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_aff891abfddef8c3f17a2613ef3b28f83} 
+thingspeak\+\_\+uploader.\+exterior}
+
+\Hypertarget{namespacethingspeak__uploader_ac9c54341ed8c4ebd214a7878e3d91a60}\index{thingspeak\_uploader@{thingspeak\_uploader}!exterior\_nuevo@{exterior\_nuevo}}
+\index{exterior\_nuevo@{exterior\_nuevo}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{exterior\_nuevo}{exterior\_nuevo}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_ac9c54341ed8c4ebd214a7878e3d91a60} 
+int thingspeak\+\_\+uploader.\+exterior\+\_\+nuevo = \doxymbox{\hyperlink{namespacethingspeak__uploader_ade8f1705fe567c593619cf49a60796f1}{id\+\_\+exterior}} $>$ \doxymbox{\hyperlink{namespacethingspeak__uploader_a3ef4c0376c8ecd160e19231452b73b2e}{ultimo\+\_\+id\+\_\+exterior}}}
+
+\Hypertarget{namespacethingspeak__uploader_ade8f1705fe567c593619cf49a60796f1}\index{thingspeak\_uploader@{thingspeak\_uploader}!id\_exterior@{id\_exterior}}
+\index{id\_exterior@{id\_exterior}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{id\_exterior}{id\_exterior}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_ade8f1705fe567c593619cf49a60796f1} 
+thingspeak\+\_\+uploader.\+id\+\_\+exterior = \doxymbox{\hyperlink{namespacethingspeak__uploader_aff891abfddef8c3f17a2613ef3b28f83}{exterior}}\+[0]\+}
+
+\Hypertarget{namespacethingspeak__uploader_ab6cb9175643693d9a8c27d4a68fed851}\index{thingspeak\_uploader@{thingspeak\_uploader}!id\_interior@{id\_interior}}
+\index{id\_interior@{id\_interior}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{id\_interior}{id\_interior}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_ab6cb9175643693d9a8c27d4a68fed851} 
+thingspeak\+\_\+uploader.\+id\+\_\+interior = \doxymbox{\hyperlink{namespacethingspeak__uploader_a3abd0ad1b363ee328b1114f89ba1935f}{interior}}\+[0]\+}
+
+\Hypertarget{namespacethingspeak__uploader_a3abd0ad1b363ee328b1114f89ba1935f}\index{thingspeak\_uploader@{thingspeak\_uploader}!interior@{interior}}
+\index{interior@{interior}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{interior}{interior}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a3abd0ad1b363ee328b1114f89ba1935f} 
+thingspeak\+\_\+uploader.\+interior}
+
+\Hypertarget{namespacethingspeak__uploader_a60f2f973c5877faa36f664968fa4e3e5}\index{thingspeak\_uploader@{thingspeak\_uploader}!interior\_nuevo@{interior\_nuevo}}
+\index{interior\_nuevo@{interior\_nuevo}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{interior\_nuevo}{interior\_nuevo}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a60f2f973c5877faa36f664968fa4e3e5} 
+int thingspeak\+\_\+uploader.\+interior\+\_\+nuevo = \doxymbox{\hyperlink{namespacethingspeak__uploader_ab6cb9175643693d9a8c27d4a68fed851}{id\+\_\+interior}} $>$ \doxymbox{\hyperlink{namespacethingspeak__uploader_a73c511b373c37ce65ed38523b0047625}{ultimo\+\_\+id\+\_\+interior}}}
+
+\Hypertarget{namespacethingspeak__uploader_ae1c8eba74bd31c535b1e3eef9c98086c}\index{thingspeak\_uploader@{thingspeak\_uploader}!THINGSPEAK\_API\_KEY@{THINGSPEAK\_API\_KEY}}
+\index{THINGSPEAK\_API\_KEY@{THINGSPEAK\_API\_KEY}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{THINGSPEAK\_API\_KEY}{THINGSPEAK\_API\_KEY}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_ae1c8eba74bd31c535b1e3eef9c98086c} 
+str thingspeak\+\_\+uploader.\+THINGSPEAK\+\_\+\+API\+\_\+\+KEY = "{}..."{}}
+
+
+
+Clave de escritura del canal Thing\+Speak. 
+
+\Hypertarget{namespacethingspeak__uploader_a3112d4747cf79e5e4a791e72c91c8486}\index{thingspeak\_uploader@{thingspeak\_uploader}!THINGSPEAK\_URL@{THINGSPEAK\_URL}}
+\index{THINGSPEAK\_URL@{THINGSPEAK\_URL}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{THINGSPEAK\_URL}{THINGSPEAK\_URL}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a3112d4747cf79e5e4a791e72c91c8486} 
+str thingspeak\+\_\+uploader.\+THINGSPEAK\+\_\+\+URL = "{}https:\+/\+/\+api.\+thingspeak.\+com/\+update"{}}
+
+
+
+URL del servicio de actualización Thing\+Speak. 
+
+\Hypertarget{namespacethingspeak__uploader_a3ef4c0376c8ecd160e19231452b73b2e}\index{thingspeak\_uploader@{thingspeak\_uploader}!ultimo\_id\_exterior@{ultimo\_id\_exterior}}
+\index{ultimo\_id\_exterior@{ultimo\_id\_exterior}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{ultimo\_id\_exterior}{ultimo\_id\_exterior}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a3ef4c0376c8ecd160e19231452b73b2e} 
+thingspeak\+\_\+uploader.\+ultimo\+\_\+id\+\_\+exterior = 0}
+
+
+
+Último ID enviado desde la tabla exterior. 
+
+\Hypertarget{namespacethingspeak__uploader_a73c511b373c37ce65ed38523b0047625}\index{thingspeak\_uploader@{thingspeak\_uploader}!ultimo\_id\_interior@{ultimo\_id\_interior}}
+\index{ultimo\_id\_interior@{ultimo\_id\_interior}!thingspeak\_uploader@{thingspeak\_uploader}}
+\doxysubsubsection{\texorpdfstring{ultimo\_id\_interior}{ultimo\_id\_interior}}
+{\footnotesize\ttfamily \label{namespacethingspeak__uploader_a73c511b373c37ce65ed38523b0047625} 
+thingspeak\+\_\+uploader.\+ultimo\+\_\+id\+\_\+interior = 0}
+
+
+
+Último ID enviado desde la tabla interior. 
+

@@ -1,0 +1,63 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Directory Hierarchy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directories}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Package List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Directory Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}web\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}static Directory Reference}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}web\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}templates Directory Reference}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}webP Directory Reference}{7}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Namespace Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}app Namespace Reference}{9}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{9}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{10}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}index()}{10}{subsubsection.5.1.2.1}%
+\contentsline {subsection}{\numberline {5.1.3}Variable Documentation}{10}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}app}{10}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}DB\_NAME}{10}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}debug}{10}{subsubsection.5.1.3.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.4}host}{10}{subsubsection.5.1.3.4}%
+\contentsline {subsubsection}{\numberline {5.1.3.5}port}{10}{subsubsection.5.1.3.5}%
+\contentsline {section}{\numberline {5.2}mqtt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sqlite Namespace Reference}{11}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{11}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Function Documentation}{12}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}guardar\_exterior()}{12}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}guardar\_interior()}{12}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}on\_connect()}{12}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}on\_message()}{13}{subsubsection.5.2.2.4}%
+\contentsline {subsection}{\numberline {5.2.3}Variable Documentation}{13}{subsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.1}BROKER}{13}{subsubsection.5.2.3.1}%
+\contentsline {subsubsection}{\numberline {5.2.3.2}cliente}{13}{subsubsection.5.2.3.2}%
+\contentsline {subsubsection}{\numberline {5.2.3.3}DB\_NAME}{13}{subsubsection.5.2.3.3}%
+\contentsline {subsubsection}{\numberline {5.2.3.4}on\_connect}{14}{subsubsection.5.2.3.4}%
+\contentsline {subsubsection}{\numberline {5.2.3.5}on\_message}{14}{subsubsection.5.2.3.5}%
+\contentsline {subsubsection}{\numberline {5.2.3.6}PORT}{14}{subsubsection.5.2.3.6}%
+\contentsline {subsubsection}{\numberline {5.2.3.7}TOPIC\_EXTERIOR}{14}{subsubsection.5.2.3.7}%
+\contentsline {subsubsection}{\numberline {5.2.3.8}TOPIC\_INTERIOR}{14}{subsubsection.5.2.3.8}%
+\contentsline {section}{\numberline {5.3}thingspeak\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}uploader Namespace Reference}{14}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{15}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Function Documentation}{15}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}enviar\_thingspeak()}{15}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}obtener\_ultimos\_datos()}{16}{subsubsection.5.3.2.2}%
+\contentsline {subsection}{\numberline {5.3.3}Variable Documentation}{16}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}codigo}{16}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}DB\_NAME}{16}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}exterior}{16}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}exterior\_nuevo}{16}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}id\_exterior}{16}{subsubsection.5.3.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.3.6}id\_interior}{16}{subsubsection.5.3.3.6}%
+\contentsline {subsubsection}{\numberline {5.3.3.7}interior}{17}{subsubsection.5.3.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.3.8}interior\_nuevo}{17}{subsubsection.5.3.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.3.9}THINGSPEAK\_API\_KEY}{17}{subsubsection.5.3.3.9}%
+\contentsline {subsubsection}{\numberline {5.3.3.10}THINGSPEAK\_URL}{17}{subsubsection.5.3.3.10}%
+\contentsline {subsubsection}{\numberline {5.3.3.11}ultimo\_id\_exterior}{17}{subsubsection.5.3.3.11}%
+\contentsline {subsubsection}{\numberline {5.3.3.12}ultimo\_id\_interior}{17}{subsubsection.5.3.3.12}%
+\contentsline {chapter}{\numberline {6}File Documentation}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}mqtt\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sqlite.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{19}{section.6.1}%
+\contentsline {section}{\numberline {6.2}thingspeak\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}uploader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}py File Reference}{20}{section.6.2}%
+\contentsline {section}{\numberline {6.3}web\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}app.py File Reference}{20}{section.6.3}%
+\contentsline {section}{\numberline {6.4}web\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}static/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}style.css File Reference}{20}{section.6.4}%
+\contentsline {section}{\numberline {6.5}web\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}templates/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}index.html File Reference}{20}{section.6.5}%
+\contentsline {chapter}{Index}{21}{section*.20}%
