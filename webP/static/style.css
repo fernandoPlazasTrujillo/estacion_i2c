@@ -1,0 +1,140 @@
+/**
+ * @file style.css
+ * @brief Hoja de estilos principal de la interfaz web.
+ *
+ * Este archivo define la apariencia visual de la aplicación
+ * web utilizada para el monitoreo del proceso de fermentación.
+ *
+ * Funcionalidades:
+ * - Diseño responsivo.
+ * - Organización de tarjetas informativas.
+ * - Formato de gráficas.
+ * - Estilos de estado del sistema.
+ * - Configuración visual general.
+ *
+ * Componentes estilizados:
+ * - Contenedor principal.
+ * - Tarjetas de datos.
+ * - Indicador de estado.
+ * - Gráficas históricas.
+ * - Pie de página.
+ *
+ * Utilizado por:
+ * - templates/index.html
+ *
+ * @author
+ * Fernando Plazas Trujillo
+ *
+ * @date 2026
+ */
+
+
+/* ==========================================================
+   CONFIGURACIÓN GENERAL DE LA PÁGINA
+========================================================== */
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f4f6f8;
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align: center;
+}
+
+
+/* ==========================================================
+   CONTENEDOR PRINCIPAL
+========================================================== */
+
+.contenedor{
+    max-width:1000px;
+    margin:auto;
+}
+
+
+/* ==========================================================
+   DISTRIBUCIÓN DE TARJETAS DE INFORMACIÓN
+========================================================== */
+
+.tarjetas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+
+/* ==========================================================
+   TARJETAS DE DATOS
+========================================================== */
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    width:300px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card h2{
+    margin-top:0;
+    text-align:center;
+}
+
+
+/* ==========================================================
+   FILAS DE INFORMACIÓN
+========================================================== */
+
+.dato{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    font-size:18px;
+}
+
+
+/* ==========================================================
+   INDICADOR DE ESTADO DEL SISTEMA
+========================================================== */
+
+.estado{
+    text-align:center;
+    margin-bottom:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.online{
+    color:green;
+}
+
+
+/* ==========================================================
+   PIE DE PÁGINA
+========================================================== */
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#666;
+}
+
+
+/* ==========================================================
+   CONFIGURACIÓN DE GRÁFICAS CHART.JS
+========================================================== */
+
+.grafica{
+    width:100%;
+    margin-top:20px;
+}
+
+.grafica canvas{
+    width:100% !important;
+    height:400px !important;
+}
+

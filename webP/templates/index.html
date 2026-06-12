@@ -1,0 +1,380 @@
+<!--
+@file index.html
+@brief Interfaz web de monitoreo del sistema de fermentación de café.
+
+Esta página constituye el frontend del sistema implementado
+en la Raspberry Pi. Utiliza Flask y Jinja2 para renderizar
+información almacenada en la base de datos SQLite y generar
+gráficas dinámicas mediante Chart.js.
+
+Funcionalidades principales:
+- Visualización de variables actuales del proceso.
+- Presentación de datos del ESP32 interior.
+- Presentación de datos del ESP32 exterior.
+- Generación de gráficas históricas.
+- Actualización automática de la página cada 30 segundos.
+
+Variables monitoreadas:
+- Temperatura interna.
+- pH.
+- Concentración de CO2.
+- Temperatura exterior.
+- Humedad exterior.
+- Voltaje de batería.
+- Corriente consumida.
+
+Tecnologías utilizadas:
+- HTML5
+- CSS3
+- Flask
+- Jinja2
+- Chart.js
+
+Flujo de información:
+
+SQLite
+   ↓
+Flask (app.py)
+   ↓
+Jinja2
+   ↓
+index.html
+   ↓
+Navegador Web
+
+@author
+Fernando Plazas Trujillo
+
+@date 2026
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- =========================================================
+     CABECERA DEL DOCUMENTO
+     Configuración general de la página:
+     - Codificación UTF-8
+     - Actualización automática
+     - Librerías externas
+     - Hoja de estilos
+========================================================= -->
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="refresh" content="30">
+
+    <title>Fermentador de café</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>Fermentador de Café</h1>
+
+    <!--
+    Estado general del sistema.
+    Indica que el servidor Flask se encuentra activo
+    y atendiendo solicitudes.
+    -->
+    <div class="estado online">
+        ★ Sistema Operativo
+    </div>
+
+    <div class="tarjetas">
+
+        <!--
+        Tarjeta de monitoreo exterior.
+
+        Muestra:
+        - Temperatura ambiente
+        - Humedad relativa
+        - Fecha de lectura
+        - Hora de lectura
+        -->
+        <div class="card">
+
+            <h2>Exterior</h2>
+
+            <div class="dato">
+                <span>Temperatura</span>
+                <span>{{ exterior[3] }} °C</span>
+            </div>
+
+            <div class="dato">
+                <span>Humedad</span>
+                <span>{{ exterior[4] }} %</span>
+            </div>
+
+            <div class="dato">
+                <span>Fecha</span>
+                <span>{{ exterior[1] }}</span>
+            </div>
+
+            <div class="dato">
+                <span>Hora</span>
+                <span>{{ exterior[2] }}</span>
+            </div>
+
+        </div>
+
+        <!--
+        Tarjeta de monitoreo interior.
+
+        Muestra:
+        - Temperatura de fermentación
+        - pH
+        - Concentración de CO2
+        - Voltaje de batería
+        - Corriente consumida
+        -->
+        <div class="card">
+
+            <h2>Interior</h2>
+
+            <div class="dato">
+                <span>Temperatura</span>
+                <span>{{ interior[3] }} °C</span>
+            </div>
+
+            <div class="dato">
+                <span>pH</span>
+                <span>{{ interior[4] }}</span>
+            </div>
+
+            <div class="dato">
+                <span>CO2</span>
+                <span>{{ interior[5] }}</span>
+            </div>
+
+            <div class="dato">
+                <span>Voltaje</span>
+                <span>{{ interior[7] }} V</span>
+            </div>
+
+            <div class="dato">
+                <span>Corriente</span>
+                <span>{{ interior[8] }} A</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card grafica">
+        <h2>Temperatura Interior</h2>
+        <canvas id="tempInteriorChart"></canvas>
+    </div>
+
+    <div class="card grafica">
+        <h2>pH</h2>
+        <canvas id="phChart"></canvas>
+    </div>
+
+    <div class="card grafica">
+        <h2>Temperatura Exterior</h2>
+        <canvas id="tempExteriorChart"></canvas>
+    </div>
+
+    <div class="card grafica" style="width:100%;">
+        <h2>CO2</h2>
+        <canvas id="co2Chart"></canvas>
+    </div>
+
+    <div class="card grafica" style="width:100%;">
+        <h2>Humedad Exterior</h2>
+        <canvas id="humedadExteriorChart"></canvas>
+    </div>
+
+    <div class="footer">
+
+        Ultima lectura:
+
+        {{ interior[1] }}
+
+        {{ interior[2] }}
+
+    </div>
+
+</div>
+
+
+<script>
+
+const datos = {{ hist_temp_int | tojson }};
+const etiquetas = datos.map(item => item[0]);
+const temperaturas = datos.map(item => item[1]);
+const ctx = document.getElementById('tempInteriorChart');
+
+new Chart(ctx, {
+
+    type: 'line',
+
+    data: {
+
+        labels: etiquetas,
+
+        datasets: [{
+            label: 'Temperatura Interior (°C)',
+            data: temperaturas,
+            borderWidth: 2,
+            tension: 0.3
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+</script>
+
+<script>
+
+const datosPH = {{ hist_ph | tojson }};
+const etiquetasPH = datosPH.map(item => item[0]);
+const valoresPH = datosPH.map(item => Number(item[1]));
+const ctxPH = document.getElementById('phChart');
+
+new Chart(ctxPH, {
+
+    type: 'line',
+
+    data: {
+
+        labels: etiquetasPH,
+
+        datasets: [{
+            label: 'pH',
+            data: valoresPH,
+            borderWidth: 2,
+            tension: 0.3
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+</script>
+
+<script>
+
+const datosExt = {{ hist_temp_ext | tojson }};
+const etiquetasExt = datosExt.map(item => item[0]);
+const temperaturasExt = datosExt.map(item => Number(item[1]));
+const ctxExt = document.getElementById('tempExteriorChart');
+
+new Chart(ctxExt, {
+
+    type: 'line',
+
+    data: {
+
+        labels: etiquetasExt,
+
+        datasets: [{
+            label: 'Temperatura Exterior (°C)',
+            data: temperaturasExt,
+            borderWidth: 2,
+            tension: 0.3
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+        maintainAspectRatio: false,
+
+        scales: {
+            y: {
+                min: 20,
+                max: 35
+            }
+        }
+    }
+});
+
+</script>
+
+<script>
+
+const datosCO2 = {{ hist_co2 | tojson }};
+const etiquetasCO2 = datosCO2.map(item => item[0]);
+const valoresCO2 = datosCO2.map(item => Number(item[1]));
+const ctxCO2 = document.getElementById('co2Chart');
+
+new Chart(ctxCO2, {
+
+    type: 'line',
+
+    data: {
+
+        labels: etiquetasCO2,
+
+        datasets: [{
+            label: 'CO2',
+            data: valoresCO2,
+            borderWidth: 2,
+            tension: 0.3
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+
+</script>
+
+<script>
+
+const datosHum = {{ hist_hum_ext | tojson }};
+const etiquetasHum = datosHum.map(item => item[0]);
+const valoresHum = datosHum.map(item => Number(item[1]));
+const ctxHum = document.getElementById('humedadExteriorChart');
+
+new Chart(ctxHum, {
+
+    type: 'line',
+
+    data: {
+
+        labels: etiquetasHum,
+
+        datasets: [{
+            label: 'Humedad Exterior (%)',
+            data: valoresHum,
+            borderWidth: 2,
+            tension: 0.3
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+        maintainAspectRatio: false,
+
+        scales: {
+            y: {
+                min: 0,
+                max: 100
+            }
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
